@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://voilok.com.ua/sitemap.xml
