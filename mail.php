@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
         mail($to, 'Войлок', $mess, 'From:'.$from); 
 
   // Переводим кодировку сообщения на UTF-8
-$message = mb_convert_encoding("Message was sent. Press OK to back.", "UTF-8", "UTF-8");
+$message = mb_convert_encoding("Повідомлення відправлено.", "UTF-8", "UTF-8");
 
 // Выводим всплывающее сообщение
 echo "<script>
