@@ -9,8 +9,10 @@ if(isset($_POST['submit'])) {
         }
 
         // $_POST['title'] содержит данные из поля "Тема", trim() - убираем все лишние пробелы и переносы строк, htmlspecialchars() - преобразует специальные символы в HTML сущности, будем считать для того, чтобы простейшие попытки взломать наш сайт обломались, ну и  substr($_POST['title'], 0, 1000) - урезаем текст до 1000 символов. Для переменной $_POST['mess'] все аналогично 
-        $from = substr(htmlspecialchars(trim($_POST['email'])), 0, 1000); 
-        $mess =  substr(htmlspecialchars(trim($_POST['mess'])), 0, 1000000); 
+        // $from = substr(htmlspecialchars(trim($_POST['email'])), 0, 1000); 
+        $from = 'mail@voilok.com.ua';
+        $mess = substr(htmlspecialchars(trim($_POST['email'])), 0, 1000). "\n" . "\n"
+        . substr(htmlspecialchars(trim($_POST['mess'])), 0, 1000000); 
         // $to - кому отправляем 
         $to = '0505732109@ukr.net, alexanderik79@gmail.com'; 
         // $from - от кого 

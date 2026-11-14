@@ -1,0 +1,9 @@
+# Один каноничный адрес: https + без www + без index.html
+RewriteEngine On
+
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://voilok.com.ua%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{THE_REQUEST} \s/+index\.(html|php)[\s?] [NC]
+RewriteRule ^index\.(html|php)$ https://voilok.com.ua/ [L,R=301]
